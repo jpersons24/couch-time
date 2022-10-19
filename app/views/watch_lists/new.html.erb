@@ -1,0 +1,11 @@
+<h1>Create new Watch List</h1>
+
+<%= form_for @watch_list do |f| %>
+  <%= f.label :User %>
+  <%= f.collection_select :user_id, User.all, :id, :name %>
+  <br>
+  <%= f.label :Movie %>
+  <%= f.collection_select :movie_id, Movie.all, :id, :title %>
+  <br>
+  <%= f.submit :Submit %>
+<% end %>
