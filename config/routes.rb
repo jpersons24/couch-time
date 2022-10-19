@@ -10,6 +10,12 @@ Rails.application.routes.draw do
   patch "/movies/:id", to: "movies#update"
 
 
+  get "/users", to: "users#index", as: "users"
+  get "/users/new", to: "users#new", as: "new_user"
+
+  post "/users", to: "users#create"
+
+
 end
 
 # HELPER METHODS
@@ -17,3 +23,5 @@ end
   # movie_path => "/movies/:id"
   # new_movie_path => "/movies/new"
   # edit_movie_path => "/movies/:id/new"
+
+  # users_path => "/users"

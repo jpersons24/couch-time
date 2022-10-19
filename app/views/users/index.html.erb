@@ -1,0 +1,7 @@
+<h1>Users Index Page</h1>
+
+<% @users.each do |user| %>
+  <p><%= user.name %></p>
+  <p><%= user.age %></p>
+  <p><%= user.bio %></p>
+<% end %>

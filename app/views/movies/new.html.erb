@@ -1,14 +1,5 @@
 <h1>New Movie Page</h1>
 
-<div>
-  <h3>3 Step Proccess:</h3>
-  <ol>
-    <li>Request Form</li>
-    <li>Fill out form in browser</li>
-    <li>Send another request to submit form information</li>
-  </ol>
-</div>
-
 <%= form_for @movie do |f| %>
 
   <%= f.label :title %>
@@ -26,3 +17,5 @@
 
   <%= f.submit :Submit %>
 <% end %>
+
+
