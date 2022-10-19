@@ -1,24 +1,35 @@
-# README
+# Couch Time
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Notes
 
-Things you may want to cover:
+### link_to
 
-* Ruby version
+- Creates an `<a></a>` tag
+- Takes two arguments, text to display and path
 
-* System dependencies
+Example
+> `link_to movie.title movie_path(movie)`
 
-* Configuration
 
-* Database creation
+### button_to
 
-* Database initialization
+- take two arguments, text to display and path
+- optional 3rd argument -> method:
+- button_to create a form, which defaults to "post" request method. Third optional `method` argument allows you to define the method desired 
 
-* How to run the test suite
+Example
+> `button_to movie.title movie_path(movie)`
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+### form_for
 
-* ...
+#### collection_select
+
+- takes four arguments -> field for instance form is for, collection list, field to take from collection instance, field to display in dropdown
+
+> ex. `f.collection_field :movie_id, Movie.all, :id, :title`
+
+> - movie_id -> tell form what key to send back into params
+> - Movie.all -> collection list
+> - :id -> value to send back
+> - :title -> value that user sees

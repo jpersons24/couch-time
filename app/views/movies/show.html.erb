@@ -5,4 +5,14 @@
 
 <img src="<%= @movie.img_url %>" alt="<%= @movie.title %>" height="600" width="400">
 
+<%= button_to "Delete Movie", movie_path(@movie), method: :delete %>
 
+<h3>Users who want to watch</h3>
+
+<div>
+  <ul>
+    <% @movie.users.each do |user| %>
+      <li><%= user.name %></li>
+    <% end %>
+  </ul>
+</div>

@@ -8,12 +8,19 @@ Rails.application.routes.draw do
   get "/movies/:id/edit", to: "movies#edit", as: "edit_movie"
   post "/movies", to: "movies#create"
   patch "/movies/:id", to: "movies#update"
-
-
+  delete "/movies/:id", to: "movies#destroy"
+  
+  
   get "/users", to: "users#index", as: "users"
   get "/users/new", to: "users#new", as: "new_user"
-
   post "/users", to: "users#create"
+  
+  resources :watch_lists
+  
+  
+  # resources :users -> only creates the 7 standard restful routes
+  # resorces :users, only: [:index, :show] -> specifies which of the 7 restful routes to create
+  # resources :user, except: [:delete] -> specifies which of the 7 restful routes to exclude
 
 
 end
