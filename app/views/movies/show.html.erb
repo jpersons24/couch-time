@@ -1,18 +1,27 @@
-<h1><%= @movie.title %></h1>
-
-<p><b>Genre: </b><%= @movie.genre %></p>
-<p><b>Release Date: </b><%= @movie.release_date %></p>
-
-<img src="<%= @movie.img_url %>" alt="<%= @movie.title %>" height="600" width="400">
-
-<%= button_to "Delete Movie", movie_path(@movie), method: :delete %>
-
-<h3>Users who want to watch</h3>
-
-<div>
-  <ul>
-    <% @movie.users.each do |user| %>
-      <li><%= user.name %></li>
-    <% end %>
-  </ul>
+<%= render "nav" %>
+<div class="container">
+  <h1><%= @movie.title %></h1>
+  <div class="list-container">
+    <ul>
+      <li><b>Genre: </b><%= @movie.genre %></li>
+      <li><b>Release Date: </b><%= @movie.release_date %></li>
+    </ul>
+  </div>
+  <div class="movie-img-container">
+  <img src="<%= @movie.img_url %>" alt="<%= @movie.title %>" height="600" width="400">
+  </div>
+  <div class="btn-container">
+    <%= button_to "Delete Movie", movie_path(@movie), method: :delete %>
+    <%= button_to "Edit Movie", edit_movie_path(@movie), method: :get %>
+  </div>
+  <div class="list-container">
+    <h3>Users who want to watch</h3>
+      <div>
+        <ul>
+          <% @movie.users.each do |user| %>
+            <li><%= user.name %></li>
+          <% end %>
+        </ul>
+      </div>
+  </div>
 </div>

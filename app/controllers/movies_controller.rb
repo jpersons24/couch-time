@@ -1,7 +1,6 @@
 class MoviesController < ApplicationController
 
-  # before_action :run_this_method, only: [:before, :these, :methods, :only]
-  before_action :find_movie, only: [:show, :edit, :update]
+  before_action :find_movie, only: [:show, :edit, :update, :destroy]
 
   def index
     @movies = Movie.all
@@ -19,8 +18,13 @@ class MoviesController < ApplicationController
 
   def create
     @movie = Movie.create(movie_params)
-
-    redirect_to movie_path(@movie)
+    
+    if @movie.valid?
+      redirect_to movie_path(@movie)
+    else
+      flash[:errors_array] = @movie.errors.full_messages
+      redirect_to new_movie_path
+    end
   end
 
   def edit
@@ -34,13 +38,9 @@ class MoviesController < ApplicationController
   end
 
   def destroy
-    find_movie
     @movie.destroy
     redirect_to movies_path
   end
-
-
-
 
   private
 

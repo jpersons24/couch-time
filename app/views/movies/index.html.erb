@@ -1,9 +1,12 @@
-<h1>Movies Index Page</h1>
+<%= render "nav" %>
 
-<% @movies.each do |movie| %>
-  <h3><%= movie.title %></h3>
-  <%# link_to(display_text, path_to_go_to) %>
-  <p><%= link_to movie.title, movie_path(movie) %></p>
-  <p>Release Date: <%= movie.release_date %></p>
-<% end %>
+<div class="container">
+  <h1>Movies Index Page</h1>
+
+  <% @movies.each do |movie| %>
+    <h3><%= movie.title %></h3>
+    <p><%= link_to movie.title, movie_path(movie) %></p>
+    <p>Release Date: <%= movie.release_date %></p>
+  <% end %>
+</div>
 

@@ -33,3 +33,26 @@ Example
 > - Movie.all -> collection list
 > - :id -> value to send back
 > - :title -> value that user sees
+
+## Lifecycle methods
+
+`before_action :method_to_execute`
+
+- can put exceptions to control when `before_action` is used
+- ex. `before_action :method, only: [:these, :methods, :only]`
+
+## HTML Partials
+
+- allow you to re-use pieces of html over again with "repeating"
+- ex. `_form.html.erb`
+  - place html within partial file
+- inside of normal view file:
+  - ex. `<%= render 'form' %>`
+
+## Model Validations
+
+- Client vs Server side validations
+- Server side validations using Active Record
+- Validating different data types (string, number, etc.)
+- create custom validation
+- use flash has to persist data for additional request AND render error messages to user
