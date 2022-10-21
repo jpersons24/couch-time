@@ -1,3 +1,48 @@
 // Place all the styles related to the movies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+div.nav-container {
+  margin: 0px;
+  padding: 15px 0px;
+  background-color: #b3e5ec5e;
+  border-bottom: 3px solid black
+}
+
+.movie-img-container {
+  margin: 20px 0px;
+}
+
+.container {
+  padding: 10px 20px;
+  margin: auto;
+  width: 80%;
+}
+
+.list-container {
+  color: white;
+  background-color: gray;
+  width: fit-content;
+  padding: 0px 20px;
+  margin: 10px 0px;
+  border: 3px solid black;
+  border-radius: 10px;
+  ul {
+    list-style: none;
+    padding-left: 0;
+    li {
+      padding: 5px 0px;
+    }
+  }
+}
+
+ul.nav li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+}
